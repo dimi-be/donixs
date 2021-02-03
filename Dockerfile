@@ -19,7 +19,7 @@ RUN tar cvzf default-nginx.tar.gz /etc/nginx\
 RUN ln -sf /dev/stdout /var/log/nginx/access.log\
   && ln -sf /dev/stderr /var/log/nginx/error.log\
   && mkdir -p /var/log/letsencrypt\
-  && ln -sf /dev/stdout /var/log/letsencrypt/letsencrypt.log
+  && ln -sf /dev/null /var/log/letsencrypt/letsencrypt.log
 
 # cleanup
 RUN rm -f /etc/cron.d/* /etc/cron.daily/* /etc/cron.hourly/* /etc/cron.monthly/* /etc/cron.weekly/*
