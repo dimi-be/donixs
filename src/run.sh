@@ -4,7 +4,7 @@ cd /
 
 if [ ! -f /etc/nginx/nginx.conf ]; then
   echo No nginx config found, creating config...
-  tar xvzf /default-conf-nginx.tar.gz
+  tar xvzf /default-nginx.tar.gz
   echo Config created
 else
   echo nginx config exists, doing nothing
