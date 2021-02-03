@@ -1,0 +1,2 @@
+#!/bin/sh -e
+/snap/bin/certbot renew
