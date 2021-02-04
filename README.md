@@ -9,9 +9,11 @@ docker build -t donixs .
 
 ### Run
 docker run -d -p 80:80 -p 443:443\
-  -v $HOME/donixs/nginx:/etc/nginx\
-  -v $HOME/donixs/www:/var/www\
-  -v $HOME/donixs/letsencrypt:/etc/letsencrypt\
+  -v $HOME/docker/donixs/nginx:/etc/nginx\
+  -v $HOME/docker/donixs/www:/var/www\
+  -v $HOME/docker/donixs/letsencrypt:/etc/letsencrypt\
+  --tmpfs /tmp\
+  --name Donixs
   donixs
   
 ### Setup

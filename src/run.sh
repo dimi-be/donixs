@@ -26,9 +26,10 @@ else
   echo letsencrypt folder not empty, doing nothing
 fi
 
-#echo Starting nginx...
-#/usr/sbin/nginx -g "daemon off;"
+echo Creating temp directories and files
+mkdir -p /tmp/log/nginx  /tmp/log/letsencrypt /tmp/nginx /tmp/letsencrypt /tmp/run
+touch /var/log/letsencrypt/letsencrypt.log /var/log/nginx/access.log /var/log/nginx/error.log 
 
 echo Starting supervisord...
-supervisord -n -c /supervisord.conf
+supervisord -n -c /supervisord.conf -j /run/supervisord.pid
 
