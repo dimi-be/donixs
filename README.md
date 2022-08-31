@@ -7,6 +7,9 @@ This is a collection of files that will create a docker image based on Debian th
 ### Build image
 docker build -t donixs .
 
+### Export image
+docker save donixs > donixs.tar
+
 ### Run
 docker run -d -p 80:80 -p 443:443\
   -v $HOME/docker/donixs/nginx:/etc/nginx\
